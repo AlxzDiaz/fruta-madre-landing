@@ -77,7 +77,7 @@ section[id] { scroll-margin-top: calc(var(--alto-header) + 8px); }
 
 /* ---------- 1 · Inicio ---------- */
 .inicio { padding: clamp(28px, 5vw, 64px) 0 clamp(48px, 7vw, 88px); }
-.inicio__grid { display: grid; gap: 36px; align-items: center; }
+.inicio__grid { display: grid; gap: 36px; align-items: start; }   /* arriba: la foto no se mueve si el texto cambia de alto al cargar la fuente */
 .etiqueta { display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; background: var(--papel); border: 1px solid var(--linea); border-radius: 999px; font-size: .92rem; font-weight: 500; }
 .punto { width: 10px; height: 10px; border-radius: 50%; background: #2FA866; box-shadow: 0 0 0 4px rgba(47, 168, 102, .18); }
 .punto--cerrado { background: var(--coral-boton); box-shadow: 0 0 0 4px rgba(196, 64, 29, .18); }
@@ -122,7 +122,7 @@ section[id] { scroll-margin-top: calc(var(--alto-header) + 8px); }
 
 /* ---------- 3 · Nosotros ---------- */
 .bloque--verde { background: var(--verde); color: #fff; }
-.bloque--verde .eyebrow { color: var(--amarillo); }
+.bloque--verde .eyebrow { color: #FFDD85; }   /* 4.9:1 sobre el verde (el amarillo de marca daba 4.49) */
 .nosotros { display: grid; gap: 36px; align-items: center; }
 .nosotros p { max-width: 34rem; opacity: .95; }
 .nosotros__puntos { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; padding: 0; list-style: none; }
