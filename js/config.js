@@ -13,6 +13,17 @@ const CONFIG = {
   // Para un cliente real: pon su número arriba y demo: false.
   demo: true,
 
+  // Jugo del día: cambia solo según el día (0 = domingo … 6 = sábado). precio = precio de oferta
+  jugoDelDia: [
+    { fruta: "Surtido de la casa", precio: 8, antes: 9 },
+    { fruta: "Copoazú", precio: 7, antes: 8 },
+    { fruta: "Camu camu", precio: 6, antes: 7 },
+    { fruta: "Cocona con piña", precio: 6, antes: 7 },
+    { fruta: "Aguaje", precio: 6, antes: 7 },
+    { fruta: "Papaya", precio: 5, antes: 6 },
+    { fruta: "Copoazú", precio: 7, antes: 8 },
+  ],
+
   // Horario (hora de Perú). dias: 0 = domingo … 6 = sábado
   horarios: [
     { dias: [1, 2, 3, 4, 5, 6], abre: "07:00", cierra: "21:00" },

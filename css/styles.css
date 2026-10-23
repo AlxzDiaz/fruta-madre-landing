@@ -165,3 +165,22 @@ section[id] { scroll-margin-top: calc(var(--alto-header) + 8px); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+/* ---------- Jugo del día (cambia solo cada día, ver config.js) ---------- */
+.jugo-dia {
+  display: inline-grid; grid-template-columns: auto auto; align-items: center; gap: 2px 18px;
+  margin: 0 0 28px; padding: 14px 20px; background: var(--papel);
+  border: 2px dashed var(--coral); border-radius: 18px;
+}
+.jugo-dia__titulo { grid-column: 1 / -1; font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--coral-boton); }
+.jugo-dia__fruta { font-size: 1.35rem; font-weight: 800; }
+.jugo-dia__precio b { font-size: 1.35rem; font-weight: 800; }
+.jugo-dia__precio s { margin-left: 4px; color: var(--suave); }
+
+/* ---------- Frutas de la selva (dentro de Nosotros) ---------- */
+.frutas { grid-column: 1 / -1; margin-top: 8px; }
+.frutas h3 { margin-bottom: 16px; font-size: 1.3rem; }
+.frutas ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.frutas li { padding: 18px 20px; background: rgba(0, 0, 0, .14); border: 1px solid rgba(255, 255, 255, .22); border-radius: 18px; }
+.frutas b { display: block; margin-bottom: 4px; font-size: 1.1rem; color: #FFDD85; }   /* 6:1 sobre la tarjeta oscurecida */
+.frutas span { font-size: .95rem; line-height: 1.5; }

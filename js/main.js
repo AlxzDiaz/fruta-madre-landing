@@ -28,6 +28,15 @@
     punto.classList.toggle("punto--cerrado", !abierto);
   }
 
+  // Jugo del día (mismo día de Perú que el horario)
+  const jugo = CONFIG.jugoDelDia && CONFIG.jugoDelDia[dia];
+  const caja = document.getElementById("jugo-dia");
+  if (jugo && caja) {
+    caja.querySelector("[data-fruta]").textContent = jugo.fruta;
+    caja.querySelector("[data-precio]").textContent = `S/ ${jugo.precio}`;
+    caja.querySelector("[data-antes]").textContent = `S/ ${jugo.antes}`;
+  }
+
   // Menú móvil
   const nav = document.getElementById("nav");
   const boton = document.getElementById("nav-boton");
