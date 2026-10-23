@@ -17,6 +17,7 @@
   <link rel="preload" href="fonts/g/outfit-v15-qgyvz-mvcbenp4njtetq-woff2.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/fuentes.css">
   <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <!-- Iconos (SVG en línea: sin librerías externas) -->
@@ -53,6 +54,7 @@
       <div class="caja inicio__grid">
         <div class="inicio__texto">
           <p class="etiqueta"><span class="punto" id="estado-punto"></span><span id="estado">Abierto hoy · de 7 a. m. a 9 p. m.</span></p>
+          <p class="saludo" id="saludo">Buenos días, Puerto Maldonado</p>
           <h1>Fruta de la selva, <span class="subrayado">recién exprimida</span>.</h1>
           <p class="inicio__sub">Jugos de copoazú, cocona y camu camu, desayunos calientes y bowls con fruta del día. En el centro de Puerto Maldonado.</p>
           <div class="inicio__acciones">
@@ -71,6 +73,8 @@
           </ul>
         </div>
         <figure class="inicio__foto">
+          <span class="mancha mancha--coral" aria-hidden="true"></span>
+          <span class="mancha mancha--amarillo" aria-hidden="true"></span>
           <img src="https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1000&h=1150&q=70"
                srcset="https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=560&h=644&q=65 560w,
                        https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1000&h=1150&q=70 1000w"
@@ -84,29 +88,39 @@
     <!-- 2 · CARTA (solo para ver: el pedido se hace por WhatsApp) -->
     <section class="bloque" id="carta">
       <div class="caja">
-        <header class="bloque__cabeza">
+        <header class="aparece bloque__cabeza">
           <p class="eyebrow">La carta</p>
           <h2>Para empezar bien el día</h2>
         </header>
 
-        <div class="fotos">
+        <div class="aparece fotos">
           <figure><img src="https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=480&h=600&q=65" alt="Vaso de jugo de papaya" width="480" height="600" loading="lazy" decoding="async"><figcaption>Jugo de papaya</figcaption></figure>
           <figure><img src="https://images.unsplash.com/photo-1627308594190-a057cd4bfac8?auto=format&fit=crop&w=480&h=600&q=65" alt="Dos bowls de açaí con plátano, frutos rojos y granola" width="480" height="600" loading="lazy" decoding="async"><figcaption>Bowl de açaí</figcaption></figure>
           <figure><img src="https://images.unsplash.com/photo-1633327760690-d9bb0513f942?auto=format&fit=crop&w=480&h=600&q=65" alt="Mesa con desayunos, huevos, pan y fruta" width="480" height="600" loading="lazy" decoding="async"><figcaption>Desayuno completo</figcaption></figure>
         </div>
 
-        <div class="menu">
-          <div class="menu__grupo">
+        <div class="antojo aparece" id="antojo">
+          <p class="antojo__pregunta">¿No sabes qué pedir? Dinos qué se te antoja:</p>
+          <div class="antojo__botones" role="group" aria-label="Recomendador de jugos">
+            <button type="button" data-antojo="calor">Tengo calor</button>
+            <button type="button" data-antojo="energia">Necesito energía</button>
+            <button type="button" data-antojo="dulce">Antojo dulce</button>
+          </div>
+          <p class="antojo__resultado" id="antojo-resultado" aria-live="polite"></p>
+        </div>
+
+        <div class="aparece menu">
+          <div class="menu__grupo aparece">
             <h3>Jugos</h3>
             <ul>
-              <li><span>Copoazú</span><i></i><b>S/ 8</b></li>
+              <li data-antojo-item="energia"><span>Copoazú</span><i></i><b>S/ 8</b></li>
               <li><span>Cocona con piña</span><i></i><b>S/ 7</b></li>
-              <li><span>Camu camu</span><i></i><b>S/ 7</b></li>
+              <li data-antojo-item="calor"><span>Camu camu</span><i></i><b>S/ 7</b></li>
               <li><span>Papaya</span><i></i><b>S/ 6</b></li>
               <li><span>Surtido de la casa</span><i></i><b>S/ 9</b></li>
             </ul>
           </div>
-          <div class="menu__grupo">
+          <div class="menu__grupo aparece">
             <h3>Desayunos</h3>
             <ul>
               <li><span>Tacacho con huevo y cecina</span><i></i><b>S/ 16</b></li>
@@ -115,10 +129,10 @@
               <li><span>Tostadas con palta</span><i></i><b>S/ 10</b></li>
             </ul>
           </div>
-          <div class="menu__grupo">
+          <div class="menu__grupo aparece">
             <h3>Bowls y café</h3>
             <ul>
-              <li><span>Bowl de açaí y granola</span><i></i><b>S/ 15</b></li>
+              <li data-antojo-item="dulce"><span>Bowl de açaí y granola</span><i></i><b>S/ 15</b></li>
               <li><span>Bowl de fruta del día</span><i></i><b>S/ 10</b></li>
               <li><span>Café de la selva</span><i></i><b>S/ 5</b></li>
               <li><span>Aguaje helado</span><i></i><b>S/ 7</b></li>
@@ -144,13 +158,13 @@
         </div>
         <img class="nosotros__foto" src="https://images.unsplash.com/photo-1780332693380-7a8957a321d0?auto=format&fit=crop&w=760&h=620&q=65" alt="Barra de la juguería con piñas, plátanos y fruta fresca" width="760" height="620" loading="lazy" decoding="async">
 
-        <div class="frutas">
+        <div class="aparece frutas">
           <h3>Frutas que solo encuentras aquí</h3>
           <ul>
-            <li><b>Camu camu</b><span>Una de las frutas con más vitamina C del mundo. Crece en las orillas de los ríos.</span></li>
-            <li><b>Copoazú</b><span>Pariente del cacao: cremoso, con un aroma entre piña y chocolate.</span></li>
-            <li><b>Cocona</b><span>Ácida y jugosa, parece un tomate. Con piña queda perfecta.</span></li>
-            <li><b>Aguaje</b><span>Fruto de la palmera de aguaje, rico en vitamina A. Se toma bien helado.</span></li>
+            <li class="fruta--camu"><b>Camu camu</b><span>Una de las frutas con más vitamina C del mundo. Crece en las orillas de los ríos.</span></li>
+            <li class="fruta--copoazu"><b>Copoazú</b><span>Pariente del cacao: cremoso, con un aroma entre piña y chocolate.</span></li>
+            <li class="fruta--cocona"><b>Cocona</b><span>Ácida y jugosa, parece un tomate. Con piña queda perfecta.</span></li>
+            <li class="fruta--aguaje"><b>Aguaje</b><span>Fruto de la palmera de aguaje, rico en vitamina A. Se toma bien helado.</span></li>
           </ul>
         </div>
       </div>
@@ -159,7 +173,7 @@
     <!-- 4 · VISÍTANOS -->
     <section class="bloque" id="visitanos">
       <div class="caja visitanos">
-        <div class="visitanos__datos">
+        <div class="aparece visitanos__datos">
           <p class="eyebrow">Visítanos</p>
           <h2>Horario y dirección</h2>
           <dl class="datos">
@@ -181,7 +195,7 @@
 
     <!-- 5 · PEDIR -->
     <section class="pedir" id="pedir">
-      <div class="caja pedir__dentro">
+      <div class="aparece caja pedir__dentro">
         <h2>¿Antojo de algo fresco?</h2>
         <p>Delivery en el centro de Puerto Maldonado de 7 a. m. a 9 p. m.</p>
         <a class="boton boton--blanco" data-wa href="https://wa.me/51944870026?text=%5BDemo%20ALXZ%2F%2F%5D%20Hola%20Fruta%20Madre%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
@@ -196,6 +210,7 @@
     </div>
   </footer>
 
+  <p class="wa-globo" id="wa-globo" aria-hidden="true">¿Un jugo al paso? <b>Escríbenos</b></p>
   <a class="wa-flotante" data-wa href="https://wa.me/51944870026?text=%5BDemo%20ALXZ%2F%2F%5D%20Hola%20Fruta%20Madre%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
 
   <script src="js/config.js"></script>

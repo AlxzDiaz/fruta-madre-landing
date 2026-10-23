@@ -37,6 +37,62 @@
     caja.querySelector("[data-antes]").textContent = `S/ ${jugo.antes}`;
   }
 
+  // Saludo según la hora de Perú
+  const hora = ahora.getUTCHours();
+  const saludo = document.getElementById("saludo");
+  if (saludo) {
+    saludo.textContent =
+      hora < 11 ? "Buenos días, Puerto Maldonado" :
+      hora < 17 ? "¿Calor en Maldonado? Pídelo bien helado" :
+      "Para cerrar el día, algo fresco";
+  }
+
+  // «¿Qué se te antoja?»: recomienda y resalta un producto de la carta
+  const recomendaciones = {
+    calor: "Un <b>camu camu bien helado</b>: refresca y tiene muchísima vitamina C.",
+    energia: "Un <b>jugo de copoazú</b>: cremoso y llenador, ideal para la mañana.",
+    dulce: "Un <b>bowl de açaí y granola</b>: dulce, frío y con fruta.",
+  };
+  const resultado = document.getElementById("antojo-resultado");
+  document.querySelectorAll("[data-antojo]").forEach((b) => {
+    b.addEventListener("click", () => {
+      const clave = b.dataset.antojo;
+      document.querySelectorAll("[data-antojo]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      resultado.innerHTML = recomendaciones[clave];
+      document.querySelectorAll(".menu li.resaltado").forEach((li) => li.classList.remove("resaltado"));
+      const item = document.querySelector(`[data-antojo-item="${clave}"]`);
+      if (item) { void item.offsetWidth; item.classList.add("resaltado"); }
+    });
+  });
+
+  // Aparición suave al bajar (solo si el sistema no pide reducir movimiento)
+  const reducir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const aparecen = document.querySelectorAll(".aparece");
+  if (reducir || !("IntersectionObserver" in window)) {
+    aparecen.forEach((el) => el.classList.add("visible"));
+  } else {
+    const io = new IntersectionObserver((entradas) => {
+      entradas.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    aparecen.forEach((el) => io.observe(el));
+  }
+
+  // Bocadillo junto al WhatsApp: aparece una vez por visita y se va al bajar
+  const globo = document.getElementById("wa-globo");
+  let visto = false;
+  try { visto = sessionStorage.getItem("wa-globo") === "1"; } catch (_) { /* sin almacenamiento */ }
+  if (globo && !visto) {
+    setTimeout(() => {
+      globo.classList.add("visible");
+      try { sessionStorage.setItem("wa-globo", "1"); } catch (_) { /* sin almacenamiento */ }
+      const ocultar = () => { globo.classList.remove("visible"); window.removeEventListener("scroll", alBajar); };
+      const inicioY = window.scrollY;
+      const alBajar = () => { if (Math.abs(window.scrollY - inicioY) > 300) ocultar(); };
+      window.addEventListener("scroll", alBajar, { passive: true });
+      setTimeout(ocultar, 9000);
+    }, 4000);
+  }
+
   // Menú móvil
   const nav = document.getElementById("nav");
   const boton = document.getElementById("nav-boton");

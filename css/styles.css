@@ -184,3 +184,73 @@ section[id] { scroll-margin-top: calc(var(--alto-header) + 8px); }
 .frutas li { padding: 18px 20px; background: rgba(0, 0, 0, .14); border: 1px solid rgba(255, 255, 255, .22); border-radius: 18px; }
 .frutas b { display: block; margin-bottom: 4px; font-size: 1.1rem; color: #FFDD85; }   /* 6:1 sobre la tarjeta oscurecida */
 .frutas span { font-size: .95rem; line-height: 1.5; }
+
+/* =========================================================
+   VIDA: saludo, latido, sello flotante, manchas, aparición,
+   frutas con color, «¿Qué se te antoja?» y bocadillo de WhatsApp
+   ========================================================= */
+.saludo { margin: 20px 0 -8px; font-weight: 600; color: var(--coral-boton); }
+
+/* El punto de «Abierto» late como un radar */
+.punto:not(.punto--cerrado) { animation: latido 2.4s ease-out infinite; }
+@keyframes latido {
+  0% { box-shadow: 0 0 0 0 rgba(47, 168, 102, .45); }
+  70% { box-shadow: 0 0 0 10px rgba(47, 168, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47, 168, 102, 0); }
+}
+
+/* Sello y manchas de color que flotan despacio */
+.sello-foto { animation: flotar 4s ease-in-out infinite alternate; }
+@keyframes flotar { from { transform: rotate(-4deg) translateY(0); } to { transform: rotate(-3deg) translateY(-6px); } }
+.inicio__foto img { position: relative; z-index: 1; }
+.sello-foto { z-index: 2; }
+.mancha { position: absolute; z-index: 0; border-radius: 50%; filter: blur(34px); opacity: .55; animation: deriva 14s ease-in-out infinite alternate; }
+.mancha--coral { width: 46%; aspect-ratio: 1; right: -8%; top: 6%; background: var(--coral); }
+.mancha--amarillo { width: 40%; aspect-ratio: 1; left: -6%; bottom: -4%; background: var(--amarillo); animation-duration: 18s; animation-direction: alternate-reverse; }
+@keyframes deriva { to { transform: translate(-18px, 22px) scale(1.08); } }
+
+/* Aparición suave al bajar (la clase .js la pone el <head>; sin JS todo se ve) */
+.js .aparece { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.js .aparece.visible { opacity: 1; transform: none; }
+.menu__grupo.aparece:nth-child(2) { transition-delay: .1s; }
+.menu__grupo.aparece:nth-child(3) { transition-delay: .2s; }
+
+/* Cada fruta con su color */
+.frutas li { border-top: 4px solid var(--fruta, var(--amarillo)); transition: transform .25s, background .25s; }
+.frutas li:hover { transform: translateY(-4px); background: rgba(0, 0, 0, .22); }
+.fruta--camu { --fruta: #D2475A; }
+.fruta--copoazu { --fruta: #EAD9A8; }
+.fruta--cocona { --fruta: #F28C28; }
+.fruta--aguaje { --fruta: #C2602A; }
+
+/* Bono: «¿Qué se te antoja?» */
+.antojo { margin: 0 0 26px; padding: 22px 24px; background: var(--papel); border-radius: var(--radio); box-shadow: var(--sombra); }
+.antojo__pregunta { margin-bottom: 12px; font-weight: 600; }
+.antojo__botones { display: flex; flex-wrap: wrap; gap: 10px; }
+.antojo__botones button {
+  padding: 10px 16px; border: 2px solid var(--linea); border-radius: 999px; background: var(--fondo);
+  font: 600 .98rem/1 var(--f); color: var(--tinta); cursor: pointer; transition: border-color .2s, background .2s, transform .2s;
+}
+.antojo__botones button:hover { border-color: var(--coral); transform: translateY(-2px); }
+.antojo__botones button[aria-pressed="true"] { background: var(--coral); border-color: var(--coral); }
+.antojo__resultado { min-height: 1.6em; margin: 14px 0 0; color: var(--suave); }
+.antojo__resultado b { color: var(--tinta); }
+.menu li.resaltado { animation: resaltar 2.2s ease; border-radius: 10px; }
+@keyframes resaltar { 0%, 60% { background: #FFE9A8; box-shadow: 0 0 0 6px #FFE9A8; } 100% { background: transparent; box-shadow: 0 0 0 6px transparent; } }
+
+/* Bocadillo junto al WhatsApp flotante */
+.wa-globo {
+  position: fixed; right: 88px; bottom: 30px; z-index: 60; margin: 0;
+  padding: 10px 14px; background: var(--papel); border-radius: 14px 14px 4px 14px; box-shadow: var(--sombra);
+  font-size: .95rem; white-space: nowrap;
+  opacity: 0; transform: translateY(8px) scale(.96); pointer-events: none; transition: opacity .35s, transform .35s;
+}
+.wa-globo.visible { opacity: 1; transform: none; }
+.wa-globo b { color: var(--coral-boton); }
+@media (max-width: 600px) { .wa-globo { right: 18px; bottom: 88px; border-radius: 14px 14px 4px 14px; font-size: .9rem; } }   /* encima del botón: a la izquierda chocaría con el aviso de demo */
+
+@media (prefers-reduced-motion: reduce) {
+  .punto, .sello-foto, .mancha { animation: none !important; }
+  .js .aparece { opacity: 1; transform: none; }
+  .menu li.resaltado { animation: none; background: #FFE9A8; }
+}
