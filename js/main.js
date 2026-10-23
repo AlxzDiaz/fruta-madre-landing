@@ -1,4 +1,4 @@
-/* Sabor Amazónico · Esencial: enlaces de WhatsApp, estado abierto/cerrado y menú móvil */
+/* Fruta Madre · Esencial: enlaces de WhatsApp, estado abierto/cerrado y menú móvil */
 (function () {
   "use strict";
 
@@ -30,7 +30,7 @@
 
   // Menú móvil
   const nav = document.getElementById("nav");
-  const boton = document.getElementById("nav-toggle");
+  const boton = document.getElementById("nav-boton");
   const cerrar = () => { nav.classList.remove("abierto"); boton.setAttribute("aria-expanded", "false"); };
   boton.addEventListener("click", () => {
     const abrir = !nav.classList.contains("abierto");

@@ -1,9 +1,9 @@
-# Sabor Amazónico · Esencial
+# Fruta Madre · Esencial
 
 Demo del **paquete Esencial** de ALXZ// (desde S/ 450): una landing de una página
 con 5 secciones, botón directo a WhatsApp, mapa, horarios y redes. Sin carrito:
-el pedido se conversa por WhatsApp. Es la versión simple de
-[restaurante-landing](https://github.com/AlxzDiaz/restaurante-landing).
+el pedido se conversa por WhatsApp. Juguería y desayunos en Puerto Maldonado,
+con estilo claro y fresco (crema, coral y verde; tipografía Outfit).
 
 Negocio ficticio (concept project).
 

@@ -3,201 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sabor Amazónico · Comida amazónica en Puerto Maldonado</title>
-  <meta name="description" content="Juane, tacacho, paiche y patarashca hechos como en casa en Puerto Maldonado. Mira la carta, nuestro horario y pide por WhatsApp.">
-  <meta name="theme-color" content="#102B21">
+  <title>Fruta Madre · Jugos y desayunos en Puerto Maldonado</title>
+  <meta name="description" content="Jugos de fruta de la selva, desayunos y bowls en Puerto Maldonado. Mira la carta, el horario y pide por WhatsApp.">
+  <meta name="theme-color" content="#FFF8F0">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Sabor Amazónico · Comida amazónica en Puerto Maldonado">
-  <meta property="og:description" content="Mira la carta y pide por WhatsApp. Delivery en Puerto Maldonado.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1746716447103-e1618bbd0669?auto=format&fit=crop&w=1200&h=630&q=70">
+  <meta property="og:title" content="Fruta Madre · Jugos y desayunos en Puerto Maldonado">
+  <meta property="og:description" content="Jugos de copoazú, cocona y camu camu, desayunos y bowls. Pide por WhatsApp.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&h=630&q=70">
   <meta property="og:locale" content="es_PE">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://images.unsplash.com">
   <!-- Tipografías alojadas aquí (sin ir a Google): el título se pinta antes -->
-  <link rel="preload" href="fonts/g/fraunces-v38-6nuu8fylnqoqzanv9byevdiide9ea92uemak-wbq8u-9v0c.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/g/outfit-v15-qgyvz-mvcbenp4njtetq-woff2.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/fuentes.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Iconos usados en la página (SVG en línea: sin librerías externas) -->
+  <!-- Iconos (SVG en línea: sin librerías externas) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></symbol>
     <symbol id="i-reloj" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></g></symbol>
-    <symbol id="i-moto" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M9 17h6l3-6h-4l-2-4H9M15 11l-3 6"/></g></symbol>
     <symbol id="i-pago" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 15h2"/></g></symbol>
-    <symbol id="i-plato" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 3v8M5 3v4a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 1-3 3-3 6v3h3v9"/></g></symbol>
+    <symbol id="i-hoja" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14M5 19l7-7"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
   </svg>
 
   <a class="saltar" href="#contenido">Saltar al contenido</a>
 
   <header class="header">
-    <div class="container header__fila">
-      <a class="logo" href="#inicio" aria-label="Sabor Amazónico, ir al inicio">
-        <img src="images/logo.svg" width="40" height="40" alt="">
-        <span>Sabor <em>Amazónico</em></span>
+    <div class="caja header__fila">
+      <a class="marca" href="#inicio" aria-label="Fruta Madre, ir al inicio">
+        <img src="images/logo.svg" width="38" height="38" alt="">
+        <span>Fruta Madre</span>
       </a>
       <nav class="nav" id="nav" aria-label="Principal">
         <a href="#carta">Carta</a>
         <a href="#nosotros">Nosotros</a>
-        <a href="#visitanos">Visítanos</a>
+        <a href="#visitanos">Horario</a>
       </nav>
-      <a class="btn btn--wa btn--sm" data-wa href="https://wa.me/51944870026?text=%5BDemo%20ALXZ%2F%2F%5D%20Hola%20Sabor%20Amaz%C3%B3nico%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" aria-label="Pedir por WhatsApp"><svg class="ico"><use href="#i-wa"/></svg><span>Pedir</span></a>
-      <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú"><svg class="ico"><use href="#i-menu"/></svg></button>
+      <a class="boton boton--wa boton--chico" data-wa href="https://wa.me/51944870026?text=%5BDemo%20ALXZ%2F%2F%5D%20Hola%20Fruta%20Madre%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" aria-label="Pedir por WhatsApp"><svg class="ico"><use href="#i-wa"/></svg><span>Pedir</span></a>
+      <button class="nav-boton" id="nav-boton" type="button" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú"><svg class="ico"><use href="#i-menu"/></svg></button>
     </div>
   </header>
 
   <main id="contenido">
     <!-- 1 · INICIO -->
-    <section class="hero" id="inicio">
-      <img class="hero__bg"
-           src="https://images.unsplash.com/photo-1746716447103-e1618bbd0669?auto=format&fit=crop&w=1800&q=70"
-           srcset="https://images.unsplash.com/photo-1746716447103-e1618bbd0669?auto=format&fit=crop&w=640&q=65 640w,
-                   https://images.unsplash.com/photo-1746716447103-e1618bbd0669?auto=format&fit=crop&w=1080&q=65 1080w,
-                   https://images.unsplash.com/photo-1746716447103-e1618bbd0669?auto=format&fit=crop&w=1800&q=70 1800w"
-           sizes="100vw" alt="" fetchpriority="high">
-      <div class="container hero__texto">
-        <p class="eyebrow">Cocina de la selva · Puerto Maldonado</p>
-        <h1>El sabor de la <em>Amazonía</em>, servido en tu mesa</h1>
-        <p class="hero__sub">Juane, tacacho, paiche y patarashca hechos como en casa, con ingredientes frescos de Madre de Dios.</p>
-        <div class="hero__acciones">
-          <a class="btn btn--primario btn--lg" href="#carta"><svg class="ico"><use href="#i-plato"/></svg>Ver la carta</a>
-          <a class="btn btn--wa btn--lg" data-wa href="https://wa.me/51944870026?text=%5BDemo%20ALXZ%2F%2F%5D%20Hola%20Sabor%20Amaz%C3%B3nico%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Pedir por WhatsApp</a>
+    <section class="inicio" id="inicio">
+      <div class="caja inicio__grid">
+        <div class="inicio__texto">
+          <p class="etiqueta"><span class="punto" id="estado-punto"></span><span id="estado">Abierto hoy · de 7 a. m. a 9 p. m.</span></p>
+          <h1>Fruta de la selva, <span class="subrayado">recién exprimida</span>.</h1>
+          <p class="inicio__sub">Jugos de copoazú, cocona y camu camu, desayunos calientes y bowls con fruta del día. En el centro de Puerto Maldonado.</p>
+          <div class="inicio__acciones">
+            <a class="boton boton--coral" data-wa href="https://wa.me/51944870026?text=%5BDemo%20ALXZ%2F%2F%5D%20Hola%20Fruta%20Madre%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Pedir por WhatsApp</a>
+            <a class="boton boton--linea" href="#carta">Ver la carta</a>
+          </div>
+          <ul class="inicio__datos">
+            <li><strong>S/ 6</strong> jugos desde</li>
+            <li><strong>7 a. m.</strong> abrimos</li>
+            <li><strong>Yape</strong> y Plin</li>
+          </ul>
         </div>
-        <ul class="hero__datos">
-          <li><span class="punto" id="estado-punto"></span><span id="estado">Abierto hoy · de 11 a. m. a 10 p. m.</span></li>
-          <li><svg class="ico"><use href="#i-moto"/></svg>Delivery 30–40 min</li>
-          <li><svg class="ico"><use href="#i-pago"/></svg>Yape · Plin · Efectivo</li>
-        </ul>
+        <figure class="inicio__foto">
+          <img src="https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1000&h=1150&q=70"
+               srcset="https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=560&h=644&q=65 560w,
+                       https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1000&h=1150&q=70 1000w"
+               sizes="(min-width: 900px) 46vw, 92vw" width="1000" height="1150"
+               alt="Tres vasos de jugo de fresa con hierbabuena y limón" fetchpriority="high">
+          <figcaption class="sello-foto"><svg class="ico"><use href="#i-hoja"/></svg>Sin azúcar añadida<br>si lo pides así</figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- 2 · CARTA (solo para ver: el pedido se hace por WhatsApp) -->
-    <section class="seccion seccion--arena" id="carta">
-      <div class="container">
-        <header class="seccion__head">
+    <section class="bloque" id="carta">
+      <div class="caja">
+        <header class="bloque__cabeza">
           <p class="eyebrow">La carta</p>
-          <h2>Lo que <em>más piden</em></h2>
-          <p>Elige tranquilo y escríbenos por WhatsApp: te confirmamos el pedido y el tiempo de entrega.</p>
+          <h2>Para empezar bien el día</h2>
         </header>
 
-        <div class="destacados">
-          <figure class="destacado">
-            <img src="https://images.unsplash.com/photo-1783469567371-f1a384ea2edd?auto=format&fit=crop&w=520&h=390&q=65" alt="Patarashca de doncella servida en hoja de bijao" width="520" height="390" loading="lazy" decoding="async">
-            <figcaption><strong>Patarashca de doncella</strong><span>S/ 30</span></figcaption>
-          </figure>
-          <figure class="destacado">
-            <img src="https://images.unsplash.com/photo-1584208632869-05fa2b2a5934?auto=format&fit=crop&w=520&h=390&q=65" alt="Juane de arroz envuelto en hoja de bijao" width="520" height="390" loading="lazy" decoding="async">
-            <figcaption><strong>Juane de arroz</strong><span>S/ 15</span></figcaption>
-          </figure>
-          <figure class="destacado">
-            <img src="https://images.unsplash.com/photo-1603194202969-12a5dbd29d34?auto=format&fit=crop&w=520&h=390&q=65" alt="Porción de torta de castaña" width="520" height="390" loading="lazy" decoding="async">
-            <figcaption><strong>Torta de castaña</strong><span>S/ 9</span></figcaption>
-          </figure>
+        <div class="fotos">
+          <figure><img src="https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=480&h=600&q=65" alt="Vaso de jugo de papaya" width="480" height="600" loading="lazy" decoding="async"><figcaption>Jugo de papaya</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1627308594190-a057cd4bfac8?auto=format&fit=crop&w=480&h=600&q=65" alt="Dos bowls de açaí con plátano, frutos rojos y granola" width="480" height="600" loading="lazy" decoding="async"><figcaption>Bowl de açaí</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1633327760690-d9bb0513f942?auto=format&fit=crop&w=480&h=600&q=65" alt="Mesa con desayunos, huevos, pan y fruta" width="480" height="600" loading="lazy" decoding="async"><figcaption>Desayuno completo</figcaption></figure>
         </div>
 
-        <div class="carta">
-          <div class="carta__grupo">
-            <h3>Fondos</h3>
+        <div class="menu">
+          <div class="menu__grupo">
+            <h3>Jugos</h3>
             <ul>
-              <li><span>Patarashca de doncella <small>Pescado de río en hoja de bijao, a la brasa</small></span><b>S/ 30</b></li>
-              <li><span>Paiche a la parrilla <small>Con patacones y ensalada fresca</small></span><b>S/ 35</b></li>
-              <li><span>Tacacho con cecina <small>Plátano con chicharrón y cecina ahumada</small></span><b>S/ 18</b></li>
-              <li><span>Juane de arroz <small>Gallina de chacra, aceituna y huevo</small></span><b>S/ 15</b></li>
+              <li><span>Copoazú</span><i></i><b>S/ 8</b></li>
+              <li><span>Cocona con piña</span><i></i><b>S/ 7</b></li>
+              <li><span>Camu camu</span><i></i><b>S/ 7</b></li>
+              <li><span>Papaya</span><i></i><b>S/ 6</b></li>
+              <li><span>Surtido de la casa</span><i></i><b>S/ 9</b></li>
             </ul>
           </div>
-          <div class="carta__grupo">
-            <h3>Entradas</h3>
+          <div class="menu__grupo">
+            <h3>Desayunos</h3>
             <ul>
-              <li><span>Cecina frita con yuca <small>Con sarza criolla</small></span><b>S/ 14</b></li>
-              <li><span>Inchicapi de gallina <small>Sopa con maní, maíz y yuca</small></span><b>S/ 12</b></li>
-              <li><span>Patacones con ají de cocona <small>Plátano verde crocante</small></span><b>S/ 10</b></li>
+              <li><span>Tacacho con huevo y cecina</span><i></i><b>S/ 16</b></li>
+              <li><span>Pan con chicharrón</span><i></i><b>S/ 9</b></li>
+              <li><span>Desayuno completo <small>huevos, pan, fruta y jugo</small></span><i></i><b>S/ 18</b></li>
+              <li><span>Tostadas con palta</span><i></i><b>S/ 10</b></li>
             </ul>
           </div>
-          <div class="carta__grupo">
-            <h3>Bebidas</h3>
+          <div class="menu__grupo">
+            <h3>Bowls y café</h3>
             <ul>
-              <li><span>Aguajina helada</span><b>S/ 7</b></li>
-              <li><span>Refresco de camu camu</span><b>S/ 6</b></li>
-              <li><span>Jugo de cocona</span><b>S/ 6</b></li>
-            </ul>
-          </div>
-          <div class="carta__grupo">
-            <h3>Postres</h3>
-            <ul>
-              <li><span>Torta de castaña <small>Con manjar blanco</small></span><b>S/ 9</b></li>
-              <li><span>Helado de copoazú <small>Artesanal</small></span><b>S/ 8</b></li>
+              <li><span>Bowl de açaí y granola</span><i></i><b>S/ 15</b></li>
+              <li><span>Bowl de fruta del día</span><i></i><b>S/ 10</b></li>
+              <li><span>Café de la selva</span><i></i><b>S/ 5</b></li>
+              <li><span>Aguaje helado</span><i></i><b>S/ 7</b></li>
             </ul>
           </div>
         </div>
+        <p class="menu__nota">Elige y escríbenos por WhatsApp: te confirmamos el pedido y la hora de entrega.</p>
       </div>
     </section>
 
     <!-- 3 · NOSOTROS -->
-    <section class="seccion" id="nosotros">
-      <div class="container nosotros">
-        <img class="nosotros__foto" src="https://images.unsplash.com/photo-1636405189493-181ecf851006?auto=format&fit=crop&w=720&h=800&q=65" alt="Salón del restaurante con plantas y mesas de madera" width="720" height="800" loading="lazy" decoding="async">
+    <section class="bloque bloque--verde" id="nosotros">
+      <div class="caja nosotros">
         <div>
-          <p class="eyebrow">Nuestra historia</p>
-          <h2>Recetas de la abuela, <em>sabor de la selva</em></h2>
-          <p>Empezamos con una mesa y una parrilla en el mercado de Puerto Maldonado. Hoy seguimos cocinando igual: con leña, hoja de bijao y productos que compramos cada mañana a productores de Madre de Dios.</p>
-          <ul class="cifras">
-            <li><strong>10+</strong><span>años cocinando</span></li>
-            <li><strong>4.8 ★</strong><span>en Google</span></li>
-            <li><strong>100%</strong><span>producto local</span></li>
+          <p class="eyebrow">Nosotros</p>
+          <h2>La fruta llega del mercado cada mañana</h2>
+          <p>Somos una juguería familiar. Antes de abrir compramos la fruta a productores de Madre de Dios y la exprimimos al momento: sin jarabes ni concentrados.</p>
+          <ul class="nosotros__puntos">
+            <li>Fruta de la región</li>
+            <li>Jugos al momento</li>
+            <li>Opciones sin azúcar</li>
           </ul>
         </div>
+        <img class="nosotros__foto" src="https://images.unsplash.com/photo-1780332693380-7a8957a321d0?auto=format&fit=crop&w=760&h=620&q=65" alt="Barra de la juguería con piñas, plátanos y fruta fresca" width="760" height="620" loading="lazy" decoding="async">
       </div>
     </section>
 
     <!-- 4 · VISÍTANOS -->
-    <section class="seccion seccion--arena" id="visitanos">
-      <div class="container visitanos">
-        <div class="tarjeta">
+    <section class="bloque" id="visitanos">
+      <div class="caja visitanos">
+        <div class="visitanos__datos">
           <p class="eyebrow">Visítanos</p>
-          <h2>Horarios y <em>ubicación</em></h2>
-          <h3><svg class="ico"><use href="#i-reloj"/></svg>Horario</h3>
-          <table class="horarios">
-            <caption class="sr-only">Horario de atención</caption>
-            <tbody>
-              <tr><th scope="row">Lunes a sábado</th><td>11:00 a. m. – 10:00 p. m.</td></tr>
-              <tr><th scope="row">Domingo</th><td>11:00 a. m. – 9:00 p. m.</td></tr>
-            </tbody>
-          </table>
-          <h3><svg class="ico"><use href="#i-pin"/></svg>Dirección</h3>
-          <p>Jr. Arequipa 123, Puerto Maldonado, Madre de Dios</p>
-          <h3><svg class="ico"><use href="#i-pago"/></svg>Pagos</h3>
-          <p>Yape · Plin · Efectivo · Tarjeta</p>
+          <h2>Horario y dirección</h2>
+          <dl class="datos">
+            <div><dt><svg class="ico"><use href="#i-reloj"/></svg>Lunes a sábado</dt><dd>7:00 a. m. – 9:00 p. m.</dd></div>
+            <div><dt><svg class="ico"><use href="#i-reloj"/></svg>Domingo</dt><dd>7:00 a. m. – 1:00 p. m.</dd></div>
+            <div><dt><svg class="ico"><use href="#i-pin"/></svg>Dirección</dt><dd>Jr. Loreto 245, frente a la Plaza de Armas</dd></div>
+            <div><dt><svg class="ico"><use href="#i-pago"/></svg>Pagos</dt><dd>Yape · Plin · Efectivo</dd></div>
+          </dl>
           <p class="redes">
             <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
             <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
             <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
           </p>
-          <a class="btn btn--oscuro" href="https://www.google.com/maps/dir/?api=1&destination=-12.5937,-69.1893" target="_blank" rel="noopener"><svg class="ico"><use href="#i-pin"/></svg>Cómo llegar</a>
+          <a class="boton boton--linea" href="https://www.google.com/maps/dir/?api=1&destination=-12.5933,-69.1891" target="_blank" rel="noopener"><svg class="ico"><use href="#i-pin"/></svg>Cómo llegar</a>
         </div>
-        <iframe class="mapa" title="Mapa: Sabor Amazónico en Puerto Maldonado" src="https://www.google.com/maps?q=-12.5937,-69.1893&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="mapa" title="Mapa: Fruta Madre en Puerto Maldonado" src="https://www.google.com/maps?q=-12.5933,-69.1891&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
 
     <!-- 5 · PEDIR -->
-    <section class="cta" id="pedir">
-      <div class="container cta__dentro">
-        <h2>¿Se te antojó? <em>Pide ahora</em> y recíbelo calientito.</h2>
-        <p>Delivery gratis en Puerto Maldonado por pedidos desde S/ 40.</p>
-        <a class="btn btn--wa btn--lg" data-wa href="https://wa.me/51944870026?text=%5BDemo%20ALXZ%2F%2F%5D%20Hola%20Sabor%20Amaz%C3%B3nico%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Hacer mi pedido</a>
+    <section class="pedir" id="pedir">
+      <div class="caja pedir__dentro">
+        <h2>¿Antojo de algo fresco?</h2>
+        <p>Delivery en el centro de Puerto Maldonado de 7 a. m. a 9 p. m.</p>
+        <a class="boton boton--blanco" data-wa href="https://wa.me/51944870026?text=%5BDemo%20ALXZ%2F%2F%5D%20Hola%20Fruta%20Madre%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__fila">
-      <p><strong>Sabor Amazónico</strong> · Cocina de la selva · Puerto Maldonado</p>
+  <footer class="pie">
+    <div class="caja pie__fila">
+      <p><strong>Fruta Madre</strong> · Jugos y desayunos · Puerto Maldonado</p>
       <p>© <span id="anio">2026</span> · Hecho por <a href="https://alxz-studio.netlify.app/" target="_blank" rel="noopener">ALXZ// Digital Studio</a></p>
     </div>
   </footer>
 
-  <a class="wa-flotante" data-wa href="https://wa.me/51944870026?text=%5BDemo%20ALXZ%2F%2F%5D%20Hola%20Sabor%20Amaz%C3%B3nico%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+  <a class="wa-flotante" data-wa href="https://wa.me/51944870026?text=%5BDemo%20ALXZ%2F%2F%5D%20Hola%20Fruta%20Madre%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
 
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
